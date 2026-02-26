@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="bg-zupply-dark pt-[120px] overflow-hidden relative">
+    <section className="bg-zupply-dark pt-[100px] overflow-hidden relative">
       {/* Subtle radial glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-zupply-primary/[0.06] rounded-full blur-[120px] pointer-events-none" />
 
