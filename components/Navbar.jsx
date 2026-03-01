@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 const navItems = [
   { label: 'Funcionalidades', href: '#funcionalidades' },
@@ -29,13 +30,15 @@ export default function Navbar() {
       }`}
     >
       {/* Logo */}
-      <a href="#" className="flex items-center gap-2">
-        <span className="bg-zupply-primary text-zupply-dark font-black text-2xl w-9 h-9 flex items-center justify-center rounded-lg font-nunito">
-          Z
-        </span>
-        <span className="text-zupply-primary font-bold text-[22px] font-nunito tracking-tight">
-          zupply
-        </span>
+      <a href="#" className="flex items-center">
+        <Image
+          src="/logo.png"
+          alt="Zupply"
+          width={140}
+          height={35}
+          className="object-contain"
+          priority
+        />
       </a>
 
       {/* Desktop nav */}

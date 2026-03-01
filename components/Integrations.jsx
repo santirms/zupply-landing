@@ -32,7 +32,7 @@ export default function Integrations() {
                   alt={i.name}
                   width={i.width}
                   height={i.height}
-                  className="object-contain brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity"
+                  className="object-contain opacity-90 group-hover:opacity-100 transition-opacity"
                 />
               </div>
               <span className="text-green-400 text-xs font-semibold font-nunito bg-green-400/10 px-3 py-1 rounded-full">

@@ -3,42 +3,48 @@ import { Check } from 'lucide-react';
 const plans = [
   {
     name: 'Starter',
-    desc: 'Para logísticas que recién arrancan',
+    price: '$70.000',
+    perPackage: '+$28',
+    desc: 'Para logísticas de hasta 1.000 envíos/mes',
     features: [
-      'Hasta 500 envíos/mes',
-      '1 integración (ML o TN)',
+      'Hasta 1.000 envíos/mes',
+      'Integración MercadoLibre y Tienda Nube',
+      'Asignación por QR',
       'Panel de seguimiento',
-      'Gestión de choferes',
       'Soporte por email',
     ],
     highlighted: false,
   },
   {
     name: 'Pro',
-    desc: 'La mejor relación precio/calidad',
+    price: '$150.000',
+    perPackage: '+$20',
+    desc: 'Sin límites, la mejor relación precio/calidad',
     features: [
       'Envíos ilimitados',
       'Todas las integraciones',
-      'Gestión de choferes',
-      'Facturación integrada',
-      'Reportes avanzados',
-      'Zonas y listas de precios',
-      'Soporte prioritario',
+      'Asignación desde el mapa',
+      'Seguimiento de choferes por GPS',
+      'Liquidación de clientes y choferes',
+      'Soporte por WhatsApp',
     ],
     highlighted: true,
+    saving: '28% menos por paquete',
   },
   {
     name: 'Enterprise',
-    desc: 'Para operaciones a medida',
+    price: '$300.000',
+    perPackage: '+$18',
+    desc: 'Para operaciones que necesitan personalización',
     features: [
-      'Todo lo de Pro',
-      'Marca blanca',
-      'Personalizaciones a medida',
-      'API dedicada',
+      'Todo lo del plan Pro',
+      'Automatizaciones',
+      'Scripts personalizados',
+      'Bot de WhatsApp incluido',
       'Soporte con SLA',
-      'Onboarding asistido',
     ],
     highlighted: false,
+    saving: '36% menos por paquete',
   },
 ];
 
@@ -53,6 +59,9 @@ export default function Pricing() {
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-3 font-nunito">
             Elegí el plan que se adapte a tu operación
           </h2>
+          <p className="text-sm text-gray-400 mt-3 font-nunito">
+            Todos los precios + IVA
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1000px] mx-auto">
@@ -71,14 +80,34 @@ export default function Pricing() {
                 </div>
               )}
 
-              <h3 className="text-[22px] font-bold text-white font-nunito mb-2">
+              <h3 className="text-[22px] font-bold text-white font-nunito mb-1">
                 {plan.name}
               </h3>
               <p className="text-sm text-gray-400 font-nunito mb-6">
                 {plan.desc}
               </p>
-              <div className="text-[28px] font-extrabold text-zupply-primary font-nunito mb-6">
-                Consultanos
+
+              {/* Price */}
+              <div className="mb-2">
+                <span className="text-[32px] font-extrabold text-zupply-primary font-nunito">
+                  {plan.price}
+                </span>
+                <span className="text-sm text-gray-500 font-nunito">/mes</span>
+              </div>
+
+              {/* Per package */}
+              <div className="flex items-center gap-2 mb-6">
+                <span className="text-base font-bold text-gray-300 font-nunito">
+                  {plan.perPackage}
+                </span>
+                <span className="text-sm text-gray-500 font-nunito">
+                  por paquete
+                </span>
+                {plan.saving && (
+                  <span className="text-[11px] font-semibold text-green-400 bg-green-400/10 px-2 py-0.5 rounded-full font-nunito">
+                    {plan.saving}
+                  </span>
+                )}
               </div>
 
               <div className="flex flex-col gap-3 mb-8 flex-1">
@@ -101,7 +130,7 @@ export default function Pricing() {
                     : 'border border-gray-700 text-gray-300 hover:border-zupply-primary hover:text-zupply-primary'
                 }`}
               >
-                Contactar
+                Empezar ahora
               </a>
             </div>
           ))}

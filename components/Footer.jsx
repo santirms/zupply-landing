@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -7,13 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="bg-zupply-primary text-zupply-dark font-black text-xl w-[30px] h-[30px] flex items-center justify-center rounded-md font-nunito">
-                Z
-              </span>
-              <span className="text-gray-400 font-semibold text-lg font-nunito">
-                zupply
-              </span>
+            <div className="mb-4">
+              <Image
+                src="/logo.png"
+                alt="Zupply"
+                width={120}
+                height={30}
+                className="object-contain"
+              />
             </div>
             <p className="text-sm text-gray-500 font-nunito leading-relaxed max-w-[280px]">
               Software para operadores logísticos de última milla. Centralizá
