@@ -1,7 +1,9 @@
+import Image from 'next/image';
+
 export default function Integrations() {
   const integrations = [
-    { name: 'MercadoLibre', abbr: 'ML', color: '#FFE600' },
-    { name: 'Tienda Nube', abbr: 'TN', color: '#2C6ECB' },
+    { name: 'MercadoLibre', logo: '/logo-mercadolibre.png', width: 160, height: 48 },
+    { name: 'Tienda Nube', logo: '/logo-tiendanube.png', width: 160, height: 48 },
   ];
 
   return (
@@ -22,23 +24,17 @@ export default function Integrations() {
           {integrations.map((i) => (
             <div
               key={i.name}
-              className="bg-white/[0.03] border border-white/[0.08] rounded-2xl px-16 py-10 flex flex-col items-center gap-4 hover:-translate-y-1 transition-all duration-300 cursor-default min-w-[220px] group"
-              style={{
-                '--int-color': i.color,
-              }}
+              className="bg-white/[0.03] border border-white/[0.08] rounded-2xl px-12 py-10 flex flex-col items-center gap-5 hover:-translate-y-1 hover:border-white/20 transition-all duration-300 cursor-default min-w-[220px] group"
             >
-              <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center text-[28px] font-extrabold font-nunito"
-                style={{
-                  background: `${i.color}15`,
-                  color: i.color,
-                }}
-              >
-                {i.abbr}
+              <div className="h-12 flex items-center justify-center">
+                <Image
+                  src={i.logo}
+                  alt={i.name}
+                  width={i.width}
+                  height={i.height}
+                  className="object-contain brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity"
+                />
               </div>
-              <span className="text-white text-base font-semibold font-nunito">
-                {i.name}
-              </span>
               <span className="text-green-400 text-xs font-semibold font-nunito bg-green-400/10 px-3 py-1 rounded-full">
                 ● Disponible
               </span>

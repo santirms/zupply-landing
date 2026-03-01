@@ -4,6 +4,7 @@ import Problem from '@/components/Problem';
 import HowItWorks from '@/components/HowItWorks';
 import Features from '@/components/Features';
 import Integrations from '@/components/Integrations';
+import MobileApp from '@/components/MobileApp';
 import Stats from '@/components/Stats';
 import Pricing from '@/components/Pricing';
 import CTA from '@/components/CTA';
@@ -18,6 +19,7 @@ export default function Home() {
       <HowItWorks />
       <Features />
       <Integrations />
+      <MobileApp />
       <Stats />
       <Pricing />
       <CTA />

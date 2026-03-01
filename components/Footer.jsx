@@ -1,18 +1,84 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
-    <footer className="bg-[#080D1A] border-t border-white/5 py-12 px-6">
-      <div className="max-w-[1100px] mx-auto flex justify-between items-center flex-wrap gap-6">
-        <div className="flex items-center gap-2">
-          <span className="bg-zupply-primary text-zupply-dark font-black text-xl w-[30px] h-[30px] flex items-center justify-center rounded-md font-nunito">
-            Z
-          </span>
-          <span className="text-gray-500 font-semibold text-lg font-nunito">
-            zupply
-          </span>
+    <footer className="bg-[#080D1A] border-t border-white/5 pt-16 pb-8 px-6">
+      <div className="max-w-[1100px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <span className="bg-zupply-primary text-zupply-dark font-black text-xl w-[30px] h-[30px] flex items-center justify-center rounded-md font-nunito">
+                Z
+              </span>
+              <span className="text-gray-400 font-semibold text-lg font-nunito">
+                zupply
+              </span>
+            </div>
+            <p className="text-sm text-gray-500 font-nunito leading-relaxed max-w-[280px]">
+              Software para operadores logísticos de última milla. Centralizá
+              envíos, organizá choferes y controlá tu operación en tiempo real.
+            </p>
+          </div>
+
+          {/* Site links */}
+          <div>
+            <h4 className="text-sm font-bold text-gray-300 font-nunito mb-4 uppercase tracking-wider">
+              Producto
+            </h4>
+            <div className="flex flex-col gap-3">
+              {[
+                { label: 'Funcionalidades', href: '#funcionalidades' },
+                { label: 'Cómo funciona', href: '#como-funciona' },
+                { label: 'Integraciones', href: '#integraciones' },
+                { label: 'Planes', href: '#planes' },
+                { label: 'Contacto', href: '#contacto' },
+              ].map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-sm text-gray-500 hover:text-zupply-primary transition-colors font-nunito"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="text-sm font-bold text-gray-300 font-nunito mb-4 uppercase tracking-wider">
+              Legal
+            </h4>
+            <div className="flex flex-col gap-3">
+              <Link
+                href="/terminos"
+                className="text-sm text-gray-500 hover:text-zupply-primary transition-colors font-nunito"
+              >
+                Términos y condiciones
+              </Link>
+              <Link
+                href="/privacidad"
+                className="text-sm text-gray-500 hover:text-zupply-primary transition-colors font-nunito"
+              >
+                Política de privacidad
+              </Link>
+              <a
+                href="mailto:hola@zupply.tech"
+                className="text-sm text-gray-500 hover:text-zupply-primary transition-colors font-nunito"
+              >
+                hola@zupply.tech
+              </a>
+            </div>
+          </div>
         </div>
-        <p className="text-gray-500 text-[13px] font-nunito">
-          © 2026 Zupply. Software para operadores logísticos de última milla.
-        </p>
+
+        {/* Bottom bar */}
+        <div className="border-t border-white/5 pt-6 flex justify-between items-center flex-wrap gap-4">
+          <p className="text-gray-600 text-xs font-nunito">
+            © 2026 Zupply. Todos los derechos reservados.
+          </p>
+        </div>
       </div>
     </footer>
   );

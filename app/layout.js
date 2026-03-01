@@ -15,12 +15,24 @@ export const metadata = {
     'gestión de choferes',
     'última milla Argentina',
   ],
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
   openGraph: {
     title: 'Zupply - Software para operadores logísticos de última milla',
     description:
       'Gestioná toda tu última milla desde un solo lugar. Centralizá envíos, organizá choferes y hacé seguimiento en tiempo real.',
     url: 'https://zupply.tech',
     siteName: 'Zupply',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Zupply - Software para la última milla',
+      },
+    ],
     locale: 'es_AR',
     type: 'website',
   },
@@ -29,6 +41,7 @@ export const metadata = {
     title: 'Zupply - Software para la última milla',
     description:
       'Centralizá envíos, organizá choferes y hacé seguimiento en tiempo real.',
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
