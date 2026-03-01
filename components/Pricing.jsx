@@ -80,15 +80,15 @@ export default function Pricing() {
                 </div>
               )}
 
-              <h3 className="text-[22px] font-bold text-white font-nunito mb-1">
+              <h3 className="text-[22px] font-bold text-white font-nunito mb-1 text-center">
                 {plan.name}
               </h3>
-              <p className="text-sm text-gray-400 font-nunito mb-6">
+              <p className="text-sm text-gray-400 font-nunito mb-6 text-center">
                 {plan.desc}
               </p>
 
               {/* Price */}
-              <div className="mb-2">
+              <div className="mb-2 text-center">
                 <span className="text-[32px] font-extrabold text-zupply-primary font-nunito">
                   {plan.price}
                 </span>
@@ -96,7 +96,7 @@ export default function Pricing() {
               </div>
 
               {/* Per package */}
-              <div className="flex items-center gap-2 mb-6">
+              <div className="flex items-center gap-2 mb-6 justify-center flex-wrap">
                 <span className="text-base font-bold text-gray-300 font-nunito">
                   {plan.perPackage}
                 </span>
